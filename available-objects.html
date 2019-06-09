@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 5 Available Objects | Paystack</title>
+  <meta name="description" content="Chapter 5 Available Objects | Paystack R Package">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 5 Available Objects | Paystack" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 5 Available Objects | Paystack R Package" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Available Objects | Paystack" />
+  
+  <meta name="twitter:description" content="Chapter 5 Available Objects | Paystack R Package" />
+  
+
+<meta name="author" content="Edgar John">
+
+
+<meta name="date" content="2019-02-24">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="set-keys.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Brief Introduction</a></li>
+<li class="chapter" data-level="2" data-path="installation.html"><a href="installation.html"><i class="fa fa-check"></i><b>2</b> Installation</a><ul>
+<li class="chapter" data-level="2.1" data-path="installation.html"><a href="installation.html#from-github"><i class="fa fa-check"></i><b>2.1</b> From GitHub</a></li>
+<li class="chapter" data-level="2.2" data-path="installation.html"><a href="installation.html#manual-installation"><i class="fa fa-check"></i><b>2.2</b> Manual Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>3</b> Basics</a><ul>
+<li class="chapter" data-level="3.1" data-path="basics.html"><a href="basics.html#general-function-structure"><i class="fa fa-check"></i><b>3.1</b> General Function Structure</a></li>
+<li class="chapter" data-level="3.2" data-path="basics.html"><a href="basics.html#getting-help"><i class="fa fa-check"></i><b>3.2</b> Getting Help</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="set-keys.html"><a href="set-keys.html"><i class="fa fa-check"></i><b>4</b> Set Keys</a><ul>
+<li class="chapter" data-level="4.1" data-path="set-keys.html"><a href="set-keys.html#basic-usage"><i class="fa fa-check"></i><b>4.1</b> Basic Usage</a></li>
+<li class="chapter" data-level="4.2" data-path="set-keys.html"><a href="set-keys.html#using-rds-files"><i class="fa fa-check"></i><b>4.2</b> Using RDS files</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="available-objects.html"><a href="available-objects.html"><i class="fa fa-check"></i><b>5</b> Available Objects</a><ul>
+<li class="chapter" data-level="5.1" data-path="available-objects.html"><a href="available-objects.html#functions"><i class="fa fa-check"></i><b>5.1</b> Functions</a></li>
+<li class="chapter" data-level="5.2" data-path="available-objects.html"><a href="available-objects.html#other-objects"><i class="fa fa-check"></i><b>5.2</b> Other Objects</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="available-objects.html"><a href="available-objects.html#available_urls"><i class="fa fa-check"></i><b>5.2.1</b> available_urls</a></li>
+<li class="chapter" data-level="5.2.2" data-path="available-objects.html"><a href="available-objects.html#banks"><i class="fa fa-check"></i><b>5.2.2</b> banks</a></li>
+<li class="chapter" data-level="5.2.3" data-path="available-objects.html"><a href="available-objects.html#pay_with_banks"><i class="fa fa-check"></i><b>5.2.3</b> pay_with_banks</a></li>
+<li class="chapter" data-level="5.2.4" data-path="available-objects.html"><a href="available-objects.html#test_cards"><i class="fa fa-check"></i><b>5.2.4</b> test_cards</a></li>
+<li class="chapter" data-level="5.2.5" data-path="available-objects.html"><a href="available-objects.html#urls"><i class="fa fa-check"></i><b>5.2.5</b> urls</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Paystack</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="available-objects" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Available Objects</h1>
+<div id="functions" class="section level2">
+<h2><span class="header-section-number">5.1</span> Functions</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># get all the function names from paystack package</span>
+function_names &lt;-<span class="st"> </span><span class="kw">unclass</span>(<span class="kw">lsf.str</span>(<span class="dt">envir =</span> <span class="kw">asNamespace</span>(<span class="st">&quot;paystack&quot;</span>), <span class="dt">all =</span> T))
+<span class="co"># for every element in function_names, get the args the function accepts</span>
+function_args &lt;-<span class="st"> </span><span class="kw">map</span>(function_names, formalArgs)
+<span class="co"># set names of function_args accordingly</span>
+<span class="kw">names</span>(function_args) &lt;-<span class="st"> </span>function_names
+
+function_args</code></pre></div>
+<pre><code>## $archive_invoice
+## [1] &quot;authorization&quot; &quot;invoice_id&quot;   
+## 
+## $charge_authorization
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $check_authorization
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $check_balance
+## [1] &quot;authorization&quot;
+## 
+## $check_pending_charge
+## [1] &quot;authorization&quot; &quot;reference&quot;    
+## 
+## $check_slug_availability
+## [1] &quot;authorization&quot; &quot;slug&quot;         
+## 
+## $create_customer
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $create_invoice
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $create_page
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $create_plan
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $create_refund
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $create_subaccount
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $create_subscription
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $create_transfer_recipient
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $deactivate_authorization
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $delete_transfer_recipients
+## [1] &quot;authorization&quot; &quot;recipient_id&quot; 
+## 
+## $disable_otp
+## [1] &quot;authorization&quot;
+## 
+## $disable_subscription
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $enable_otp
+## [1] &quot;authorization&quot;
+## 
+## $enable_subscription
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $exchange_rate
+## [1] &quot;amount&quot;         &quot;base_currency&quot;  &quot;quote_currency&quot;
+## 
+## $export_transactions
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $fetch_bulk_charge_batch
+## [1] &quot;authorization&quot; &quot;batch_id&quot;     
+## 
+## $fetch_charges_in_batch
+## [1] &quot;authorization&quot; &quot;batch_id&quot;      &quot;...&quot;          
+## 
+## $fetch_customer
+## [1] &quot;authorization&quot; &quot;customer_code&quot; &quot;...&quot;          
+## 
+## $fetch_page
+## [1] &quot;authorization&quot; &quot;page_id&quot;      
+## 
+## $fetch_payment_session_timeout
+## [1] &quot;authorization&quot;
+## 
+## $fetch_plan
+## [1] &quot;authorization&quot; &quot;plan_id&quot;      
+## 
+## $fetch_refund
+## [1] &quot;authorization&quot; &quot;trans_id&quot;     
+## 
+## $fetch_settlements
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $fetch_subaccount
+## [1] &quot;authorization&quot; &quot;subacct_id&quot;   
+## 
+## $fetch_subscription
+## [1] &quot;authorization&quot; &quot;id&quot;           
+## 
+## $fetch_transaction
+## [1] &quot;authorization&quot; &quot;id&quot;           
+## 
+## $fetch_transfer
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $finalize_disable_otp
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $finalize_invoices
+## [1] &quot;authorization&quot; &quot;invoice_id&quot;    &quot;...&quot;          
+## 
+## $get_invoice_metrics
+## [1] &quot;authorization&quot;
+## 
+## $initialize_transaction
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $initiate_bulk_charge
+## [1] &quot;authorization&quot; &quot;reference&quot;     &quot;...&quot;          
+## 
+## $initiate_bulk_transfer
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $initiate_transfer
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_banks
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_bulk_charge_batches
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_customers
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_invoices
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_pages
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_plans
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_refunds
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_subaccount
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_subscriptions
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_transactions
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $list_transfer_recipients
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $mark_as_paid
+## [1] &quot;authorization&quot; &quot;invoice_id&quot;    &quot;...&quot;          
+## 
+## $parse_response
+## [1] &quot;response&quot;
+## 
+## $pause_bulk_charge_batch
+## [1] &quot;authorization&quot; &quot;batch_code&quot;   
+## 
+## $request_reauthorization
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $resend_otp
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $resolve_account_number
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $resolve_bvn
+## [1] &quot;authorization&quot; &quot;bvn&quot;          
+## 
+## $resolve_card_bin
+## [1] &quot;card_bin&quot;
+## 
+## $resolve_phone_number
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $resume_bulk_charge_batch
+## [1] &quot;authorization&quot; &quot;batch_code&quot;   
+## 
+## $send_notification
+## [1] &quot;authorization&quot; &quot;invoice_id&quot;    &quot;...&quot;          
+## 
+## $set_keys
+## [1] &quot;public_key&quot; &quot;secret_key&quot;
+## 
+## $set_risk_action
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $submit_birthday
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $submit_otp
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $submit_phone
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $submit_pin
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $transaction_totals
+## [1] &quot;authorization&quot; &quot;...&quot;          
+## 
+## $update_customer
+## [1] &quot;authorization&quot; &quot;id&quot;            &quot;...&quot;          
+## 
+## $update_invoice
+## [1] &quot;authorization&quot; &quot;invoice_id&quot;    &quot;...&quot;          
+## 
+## $update_page
+## [1] &quot;authorization&quot; &quot;page_id&quot;       &quot;...&quot;          
+## 
+## $update_payment_session_timeout
+## [1] &quot;authorization&quot;
+## 
+## $update_plan
+## [1] &quot;authorization&quot; &quot;plan_id&quot;       &quot;...&quot;          
+## 
+## $update_subaccount
+## [1] &quot;authorization&quot; &quot;subacct_id&quot;    &quot;...&quot;          
+## 
+## $update_transfer_recipients
+## [1] &quot;authorization&quot; &quot;recipient_id&quot;  &quot;...&quot;          
+## 
+## $verify_invoice
+## [1] &quot;authorization&quot; &quot;invoice_id&quot;   
+## 
+## $verify_transaction
+## [1] &quot;authorization&quot; &quot;reference&quot;    
+## 
+## $view_invoice
+## [1] &quot;authorization&quot; &quot;invoice_id&quot;   
+## 
+## $view_transaction_timeline
+## [1] &quot;authorization&quot; &quot;id&quot;</code></pre>
+</div>
+<div id="other-objects" class="section level2">
+<h2><span class="header-section-number">5.2</span> Other Objects</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># remove function_names from all available objects in the package</span>
+<span class="kw">setdiff</span>(<span class="kw">ls</span>(<span class="st">&quot;package:paystack&quot;</span>), function_names)</code></pre></div>
+<pre><code>## [1] &quot;available_urls&quot; &quot;banks&quot;          &quot;pay_with_banks&quot; &quot;test_cards&quot;    
+## [5] &quot;urls&quot;</code></pre>
+<div id="available_urls" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> available_urls</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">available_urls</code></pre></div>
+<pre><code>##  [1] &quot;https://api.paystack.co/bank&quot;                               
+##  [2] &quot;https://api.paystack.co/bank/resolve&quot;                       
+##  [3] &quot;https://api.paystack.co/bank/resolve_bvn&quot;                   
+##  [4] &quot;https://api.paystack.co/bulkcharge&quot;                         
+##  [5] &quot;https://api.paystack.co/bulkcharge/pause&quot;                   
+##  [6] &quot;https://api.paystack.co/bulkcharge/resume&quot;                  
+##  [7] &quot;https://api.paystack.co/charge&quot;                             
+##  [8] &quot;https://api.paystack.co/charge/submit_birthday&quot;             
+##  [9] &quot;https://api.paystack.co/charge/submit_otp&quot;                  
+## [10] &quot;https://api.paystack.co/charge/submit_phone&quot;                
+## [11] &quot;https://api.paystack.co/charge/submit_pin&quot;                  
+## [12] &quot;https://api.paystack.co/customer&quot;                           
+## [13] &quot;https://api.paystack.co/customer/deactivate_authorization&quot;  
+## [14] &quot;https://api.paystack.co/customer/set_risk_action&quot;           
+## [15] &quot;https://api.paystack.co/decision/bin&quot;                       
+## [16] &quot;https://api.paystack.co/page&quot;                               
+## [17] &quot;https://api.paystack.co/page/check_slug_availability&quot;       
+## [18] &quot;https://api.paystack.co/paymentrequest&quot;                     
+## [19] &quot;https://api.paystack.co/paymentrequest/archive&quot;             
+## [20] &quot;https://api.paystack.co/paymentrequest/finalize&quot;            
+## [21] &quot;https://api.paystack.co/paymentrequest/notify&quot;              
+## [22] &quot;https://api.paystack.co/paymentrequest/totals&quot;              
+## [23] &quot;https://api.paystack.co/paymentrequest/verify&quot;              
+## [24] &quot;https://api.paystack.co/plan&quot;                               
+## [25] &quot;https://api.paystack.co/refund&quot;                             
+## [26] &quot;https://api.paystack.co/settlement&quot;                         
+## [27] &quot;https://api.paystack.co/subaccount&quot;                         
+## [28] &quot;https://api.paystack.co/subscription&quot;                       
+## [29] &quot;https://api.paystack.co/subscription/disable&quot;               
+## [30] &quot;https://api.paystack.co/subscription/enable&quot;                
+## [31] &quot;https://api.paystack.co/transaction&quot;                        
+## [32] &quot;https://api.paystack.co/transaction/charge_authorization&quot;   
+## [33] &quot;https://api.paystack.co/transaction/check_authorization&quot;    
+## [34] &quot;https://api.paystack.co/transaction/export&quot;                 
+## [35] &quot;https://api.paystack.co/transaction/initialize&quot;             
+## [36] &quot;https://api.paystack.co/transaction/request_reauthorization&quot;
+## [37] &quot;https://api.paystack.co/transaction/timeline&quot;               
+## [38] &quot;https://api.paystack.co/transaction/totals&quot;                 
+## [39] &quot;https://api.paystack.co/transaction/verify&quot;                 
+## [40] &quot;https://api.paystack.co/transfer&quot;                           
+## [41] &quot;https://api.paystack.co/transfer/disable_otp&quot;               
+## [42] &quot;https://api.paystack.co/transfer/disable_otp_finalize&quot;      
+## [43] &quot;https://api.paystack.co/transfer/enable_otp&quot;                
+## [44] &quot;https://api.paystack.co/transfer/finalize_transfer&quot;         
+## [45] &quot;https://api.paystack.co/transfer/resend_otp&quot;                
+## [46] &quot;https://api.paystack.co/transferreceipient&quot;                 
+## [47] &quot;https://api.paystack.co/verifications&quot;</code></pre>
+</div>
+<div id="banks" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> banks</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">banks</code></pre></div>
+<pre><code>##                        name                     slug code payable
+## 1               Access Bank              access-bank  044    TRUE
+## 2              ALAT by WEMA             alat-by-wema 035A    TRUE
+## 3     ASO Savings and Loans               asosavings  401   FALSE
+## 4          Citibank Nigeria         citibank-nigeria  023   FALSE
+## 5              Diamond Bank             diamond-bank  063   FALSE
+## 6           Ecobank Nigeria          ecobank-nigeria  050   FALSE
+## 7  Ekondo Microfinance Bank ekondo-microfinance-bank  562   FALSE
+## 8           Enterprise Bank          enterprise-bank  084   FALSE
+## 9             Fidelity Bank            fidelity-bank  070    TRUE
+## 10    First Bank of Nigeria    first-bank-of-nigeria  011   FALSE
+## 11 First City Monument Bank first-city-monument-bank  214    TRUE
+## 12      Guaranty Trust Bank      guaranty-trust-bank  058    TRUE
+## 13            Heritage Bank            heritage-bank  030   FALSE
+## 14                Jaiz Bank                jaiz-bank  301   FALSE
+## 15            Keystone Bank            keystone-bank  082   FALSE
+## 16          MainStreet Bank          mainstreet-bank  014   FALSE
+## 17            Parallex Bank            parallex-bank  526   FALSE
+## 18             Polaris Bank             polaris-bank  076   FALSE
+## 19            Providus Bank            providus-bank  101   FALSE
+## 20        Stanbic IBTC Bank        stanbic-ibtc-bank  221   FALSE
+## 21  Standard Chartered Bank  standard-chartered-bank  068   FALSE
+## 22            Sterling Bank            sterling-bank  232    TRUE
+## 23            Suntrust Bank            suntrust-bank  100   FALSE
+## 24    Union Bank of Nigeria    union-bank-of-nigeria  032    TRUE
+## 25   United Bank For Africa   united-bank-for-africa  033   FALSE
+## 26               Unity Bank               unity-bank  215    TRUE
+## 27                Wema Bank                wema-bank  035   FALSE
+## 28              Zenith Bank              zenith-bank  057    TRUE</code></pre>
+</div>
+<div id="pay_with_banks" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> pay_with_banks</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pay_with_banks</code></pre></div>
+<pre><code>##                       name code
+## 1              Access Bank  044
+## 2             ALAT by WEMA 035A
+## 3            Fidelity Bank  070
+## 4 First City Monument Bank  214
+## 5      Guaranty Trust Bank  058
+## 6            Sterling Bank  232
+## 7    Union Bank of Nigeria  032
+## 8               Unity Bank  215
+## 9              Zenith Bank  057</code></pre>
+</div>
+<div id="test_cards" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> test_cards</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test_cards</code></pre></div>
+<pre><code>## $no_validation
+## $no_validation$card_number
+## [1] 4.084084e+15
+## 
+## $no_validation$exp_date
+## [1] &quot;03/21&quot;
+## 
+## $no_validation$cvv
+## [1] 408
+## 
+## 
+## $pin_only_validation
+## $pin_only_validation$card_number
+## [1] 5.078508e+17
+## 
+## $pin_only_validation$exp_date
+## [1] &quot;03/21&quot;
+## 
+## $pin_only_validation$cvv
+## [1] 81
+## 
+## $pin_only_validation$pin
+## [1] 1111
+## 
+## 
+## $simulated_error_msg
+## $simulated_error_msg$error_001
+## $simulated_error_msg$error_001$error_message
+## [1] &quot;Declined&quot;
+## 
+## $simulated_error_msg$error_001$card_number
+## [1] 4.08408e+15
+## 
+## $simulated_error_msg$error_001$exp_date
+## [1] &quot;03/21&quot;
+## 
+## $simulated_error_msg$error_001$CVV
+## [1] 1
+## 
+## 
+## $simulated_error_msg$error_002
+## $simulated_error_msg$error_002$error_message
+## [1] &quot;Token Not Generated. Customer Not Registered on Token Platform&quot;
+## 
+## $simulated_error_msg$error_002$card_number
+## [1] 5.078508e+17
+## 
+## $simulated_error_msg$error_002$exp_date
+## [1] &quot;03/21&quot;
+## 
+## $simulated_error_msg$error_002$cvv
+## [1] 82
+## 
+## $simulated_error_msg$error_002$pin
+## [1] 6503
+## 
+## 
+## 
+## $simulated_issues
+## $simulated_issues$issue_003
+## $simulated_issues$issue_003$issue
+## [1] &quot;Timeout error&quot;
+## 
+## $simulated_issues$issue_003$card_number
+## [1] 5.06066e+15
+## 
+## $simulated_issues$issue_003$exp_date
+## [1] &quot;03/21&quot;
+## 
+## $simulated_issues$issue_003$CVV
+## [1] 606
+## 
+## 
+## $simulated_issues$issue_004
+## $simulated_issues$issue_004$issue
+## [1] &quot;500 error&quot;
+## 
+## $simulated_issues$issue_004$card_number
+## [1] 5.060665e+17
+## 
+## $simulated_issues$issue_004$exp_date
+## [1] &quot;03/21&quot;
+## 
+## $simulated_issues$issue_004$cvv
+## [1] 60</code></pre>
+</div>
+<div id="urls" class="section level3">
+<h3><span class="header-section-number">5.2.5</span> urls</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">urls</code></pre></div>
+<pre><code>## $balance
+## [1] &quot;https://api.paystack.co/balance&quot;
+## 
+## $bank
+## $bank$base
+## [1] &quot;https://api.paystack.co/bank&quot;
+## 
+## $bank$resolve_acc_no
+## [1] &quot;https://api.paystack.co/bank/resolve&quot;
+## 
+## $bank$resolve_bvn
+## [1] &quot;https://api.paystack.co/bank/resolve_bvn&quot;
+## 
+## 
+## $bulkcharge
+## $bulkcharge$base
+## [1] &quot;https://api.paystack.co/bulkcharge&quot;
+## 
+## $bulkcharge$pause
+## [1] &quot;https://api.paystack.co/bulkcharge/pause&quot;
+## 
+## $bulkcharge$resume
+## [1] &quot;https://api.paystack.co/bulkcharge/resume&quot;
+## 
+## 
+## $charge
+## $charge$base
+## [1] &quot;https://api.paystack.co/charge&quot;
+## 
+## $charge$pin
+## [1] &quot;https://api.paystack.co/charge/submit_pin&quot;
+## 
+## $charge$otp
+## [1] &quot;https://api.paystack.co/charge/submit_otp&quot;
+## 
+## $charge$phone
+## [1] &quot;https://api.paystack.co/charge/submit_phone&quot;
+## 
+## $charge$birthday
+## [1] &quot;https://api.paystack.co/charge/submit_birthday&quot;
+## 
+## 
+## $customer
+## $customer$base
+## [1] &quot;https://api.paystack.co/customer&quot;
+## 
+## $customer$set_risk_action
+## [1] &quot;https://api.paystack.co/customer/set_risk_action&quot;
+## 
+## $customer$del_auth
+## [1] &quot;https://api.paystack.co/customer/deactivate_authorization&quot;
+## 
+## 
+## $integration
+## $integration$payment_session_timeout
+## [1] &quot;https://api.paystack.co/integration/payment_session_timeout&quot;
+## 
+## 
+## $invoices
+## $invoices$base
+## [1] &quot;https://api.paystack.co/paymentrequest&quot;
+## 
+## $invoices$notify
+## [1] &quot;https://api.paystack.co/paymentrequest/notify&quot;
+## 
+## $invoices$verify
+## [1] &quot;https://api.paystack.co/paymentrequest/verify&quot;
+## 
+## $invoices$totals
+## [1] &quot;https://api.paystack.co/paymentrequest/totals&quot;
+## 
+## $invoices$finalize
+## [1] &quot;https://api.paystack.co/paymentrequest/finalize&quot;
+## 
+## $invoices$archive
+## [1] &quot;https://api.paystack.co/paymentrequest/archive&quot;
+## 
+## $invoices$paid
+## [1] &quot;https://api.paystack.co/paymentrequest/mark_as_paid&quot;
+## 
+## 
+## $page
+## $page$base
+## [1] &quot;https://api.paystack.co/page&quot;
+## 
+## $page$check
+## [1] &quot;https://api.paystack.co/page/check_slug_availability&quot;
+## 
+## 
+## $plan
+## [1] &quot;https://api.paystack.co/plan&quot;
+## 
+## $refund
+## [1] &quot;https://api.paystack.co/refund&quot;
+## 
+## $resolve_card
+## [1] &quot;https://api.paystack.co/decision/bin&quot;
+## 
+## $resolve_phone
+## [1] &quot;https://api.paystack.co/verifications&quot;
+## 
+## $settlement
+## [1] &quot;https://api.paystack.co/settlement&quot;
+## 
+## $subaccount
+## [1] &quot;https://api.paystack.co/subaccount&quot;
+## 
+## $subscription
+## $subscription$base
+## [1] &quot;https://api.paystack.co/subscription&quot;
+## 
+## $subscription$enable
+## [1] &quot;https://api.paystack.co/subscription/enable&quot;
+## 
+## $subscription$disable
+## [1] &quot;https://api.paystack.co/subscription/disable&quot;
+## 
+## 
+## $transaction
+## $transaction$base
+## [1] &quot;https://api.paystack.co/transaction&quot;
+## 
+## $transaction$verify
+## [1] &quot;https://api.paystack.co/transaction/verify&quot;
+## 
+## $transaction$totals
+## [1] &quot;https://api.paystack.co/transaction/totals&quot;
+## 
+## $transaction$export
+## [1] &quot;https://api.paystack.co/transaction/export&quot;
+## 
+## $transaction$init
+## [1] &quot;https://api.paystack.co/transaction/initialize&quot;
+## 
+## $transaction$timeline
+## [1] &quot;https://api.paystack.co/transaction/timeline&quot;
+## 
+## $transaction$check_auth
+## [1] &quot;https://api.paystack.co/transaction/check_authorization&quot;
+## 
+## $transaction$charge_auth
+## [1] &quot;https://api.paystack.co/transaction/charge_authorization&quot;
+## 
+## $transaction$req_reauth
+## [1] &quot;https://api.paystack.co/transaction/request_reauthorization&quot;
+## 
+## 
+## $transfer
+## $transfer$base
+## [1] &quot;https://api.paystack.co/transfer&quot;
+## 
+## $transfer$finalize
+## [1] &quot;https://api.paystack.co/transfer/finalize_transfer&quot;
+## 
+## $transfer$resend_otp
+## [1] &quot;https://api.paystack.co/transfer/resend_otp&quot;
+## 
+## $transfer$disable_otp_req
+## [1] &quot;https://api.paystack.co/transfer/disable_otp&quot;
+## 
+## $transfer$enable_otp_req
+## [1] &quot;https://api.paystack.co/transfer/enable_otp&quot;
+## 
+## $transfer$finalize_disable_otp_req
+## [1] &quot;https://api.paystack.co/transfer/disable_otp_finalize&quot;
+## 
+## $transfer$recipient
+## [1] &quot;https://api.paystack.co/transferrecipient&quot;</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="set-keys.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["paystack-documentation.pdf", "paystack-documentation.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
